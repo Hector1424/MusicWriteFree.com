@@ -1,0 +1,408 @@
+#header{
+    margin: 0;
+    height: 60px;
+    background-color: rgb(245, 245, 245);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegúrate de que el header se mantenga sobre otros elementos */
+    box-shadow: 1px 3px 35px rgba(0, 0, 0, 0.2); /* Sombra con desenfoque */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+}
+
+#window{
+    padding-top: 50px;
+    width: 100%;
+    height: 95vh;
+    margin: 0;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+}
+
+#contenido{
+    background-color: white;
+    width: 900px;
+    min-width: 900px;
+    border-radius: 1%;
+    height: fit-content;
+    min-height: 85vh;
+    box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.2); /* Sombra con desenfoque */
+}
+
+#editor-container {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    /* margin-top: 50px; */
+}
+
+.ventana-impresion{
+    margin: 0;
+    padding: 40px;
+    width: 900px;
+}
+
+.agregarRenglon {
+    margin-bottom: 20px;
+    border-radius: 10%;
+    margin-right: 10px;
+    border-width: 1px;
+    color: rgb(95, 94, 94);
+    background-color: rgb(235, 234, 234);
+    font-weight: bold;
+    border-color: rgb(224, 224, 224);
+}
+
+.renglon-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.renglon {
+    flex-grow: 1;
+    position: relative;
+    height: fit-content;
+}
+
+.notas-div {
+    width: 706px;
+    position: relative;
+    height: 25px;
+    background-color: rgb(255, 254, 254);
+    cursor:crosshair;
+}
+
+.letra-input {
+    width: 706px;
+    border: 0.5px solid rgb(231, 231, 231);
+    font-size: 9px;
+    letter-spacing: 4px; /* Ajusta el valor según tus necesidades */
+}
+
+
+
+.nota {
+    position: absolute;
+    top: 0;
+    font-size: 12px;
+    cursor: pointer;
+    color: blue;
+}
+
+#renglones {
+    width: 775px;
+    padding: 0;
+    /* background-color: brown; */
+}
+
+.renglon_controls {
+    height: 20px;
+    flex-direction: column;
+}
+
+.btn-delete{
+    border-radius: 10%;
+    border-width: 1px;
+    color: rgb(95, 94, 94);
+    background-color: rgb(235, 234, 234);
+    font-weight: bold;
+    border-color: rgb(224, 224, 224);
+}
+
+#editor-ventana{
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+}
+
+#editor-controls-container{
+    width: 100vw;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    margin-top: 10px;
+    align-items: center;
+}
+
+
+#play-controls-container{
+    width: 100vw;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    margin-top: 10px;
+    align-items: center;
+}
+
+
+
+#titulo-cancion{
+    display: flex;
+    justify-content: start; /* Centra horizontalmente */
+    padding: 0;
+}
+
+#artista-cancion{
+    display: flex;
+    justify-content: start; /* Centra horizontalmente */
+    margin-bottom: 25px;
+    padding: 0;
+}
+
+#titulo-cancion input{
+    border: none;
+    text-align: start;
+    font-weight: bolder;
+    font-size: larger;
+    color: rgb(62, 74, 231);
+}
+
+#artista-cancion input{
+    border: none;
+    text-align: start;
+    /* font-weight: bolder; */
+    font-size: medium;
+    color: rgb(108, 108, 223);
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+.btn-control-semitono{
+    /* box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);  */
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    border-width: 0px;
+    margin-left: 10px;
+    color: rgb(95, 94, 94);
+    background-color: rgb(235, 234, 234);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.btn-control-semitono:hover{
+    background-color: rgb(228, 225, 225);
+}
+
+.btn-control-imprimir{
+    height: 45px;
+    width: 45px;
+    border-width: 0px;
+    margin-left: 10px;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.btn-control-imprimir:hover{
+    background-color: rgb(228, 225, 225);
+}
+
+
+
+.btn-control-guardar{
+    height: 45px;
+    width: 45px;
+    border-width: 0px;
+    margin-left: 10px;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.btn-control-guardar:hover{
+    background-color: rgb(228, 225, 225);
+}
+
+
+.btn-control-metronomo{
+    height: 45px;
+    width: 45px;
+    border-width: 0px;
+    /* margin-left: 10px; */
+    border-radius: 50%;
+    font-size: 20px;
+    background-color: transparent;
+}
+
+
+.btn-control-metronomo:hover{
+    font-size: 21.5px;
+    /* background-color: rgb(228, 225, 225); */
+}
+
+.btn-control-metronomo:focus{
+    outline: none;
+}
+
+#control-panel{
+    width: 400px;
+    margin-right: 240px;
+    margin-left: 120px;
+
+}
+
+#perfil-panel{
+    display: none;
+    background-color: white;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.linea-horizontal {
+    height: 1px; /* Altura de la línea */
+    background-color: rgb(214, 211, 211); /* Color de la línea */
+    width: 90%; /* Ancho de la línea */
+    margin-top: 20px;
+}
+
+
+.file-input-label {
+    width: 45px; /* Tamaño del círculo */
+    height: 45px; /* Tamaño del círculo */
+    border-radius: 50%; /* Hace que sea circular */
+    background-color: rgb(235, 234, 234);
+    cursor: pointer; /* Cambia el cursor para indicar que es clickable */
+    font-size: 20px; /* Tamaño del ícono */
+    text-align: center;
+    line-height: 42px; 
+    margin: 0;
+    margin-left: 100px;
+}
+
+.file-input-label:hover{
+    background-color: rgb(228, 225, 225);
+}
+
+.file-input {
+    display: none; /* Oculta el input real */
+}
+
+
+
+
+#contenedorFiltroNotas {
+    /* position: relative;  */
+    width: 100px; /* Ajusta el ancho según tus necesidades */
+    z-index: 10;
+    height: 300px;
+    display: none;
+}
+
+
+#filtroNotas {
+    width: 100%;
+    box-sizing: border-box; /* Para que el ancho incluya el padding y border */
+}
+
+.selector-notas {
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 30px; /* Ajusta esto para que el dropdown aparezca debajo del campo de texto */
+    left: 0px;
+    z-index: 9; /* Un z-index menor que el del campo de texto */
+}
+
+.selector-tamanio-letra{
+    background-color: rgb(235, 234, 234);
+    height: 40px;
+    width: 55px;
+    border-width: 0px;
+    margin-left: 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    padding: 4px;
+}
+
+.icono-zona span{
+    letter-spacing: 3px;
+    font-family: fantasy;
+    font-size: 18px;    
+    color: rgba(88, 31, 31, 0.829);
+}
+
+.selector-tempo{
+    border-radius: 5px;
+    border-color: rgb(221, 221, 221);
+    color: #636363;
+}
+
+#indicators-container{
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;   
+    height: auto;
+}
+
+#led-metronomo{
+    background-color: rgb(3, 85, 3);
+    box-shadow: inset .25em .25em .25em rgba(255,255,255,.25), inset -.25em -.25em .25em .5em rgba(0,0,0,.25), inset 1em .5em .5em rgba(0,0,0,.5);
+    color: transparent;
+    height: 25px;
+    width: 25px;
+    border-radius: 50px;
+}
+
+
+.led-on {
+    background-color: rgb(41, 250, 41) !important; /* Color del LED encendido */
+    box-shadow: 0 0 8px rgb(4, 255, 4) !important; /* Brillo del LED */
+}
+
+.btn-verde {
+    color: green; /* Cambia esto por el código de color verde que prefieras */
+}
+
+
+#infoButton {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+    /* padding: 5px 10px; */
+    width: 25px;
+    height: 25px;
+    margin-left: 15px;
+}
+
+
+#songTempoList {
+    background-color: white;
+    border: 1px solid #ddd;
+    position: absolute; /* Posicionamiento relativo al botón */
+    width: 270px; /* Ajusta el ancho según tus necesidades */
+    max-height: 200px; /* Altura para mostrar aproximadamente 5 elementos */
+    overflow-y: auto; /* Permite el desplazamiento vertical si es necesario */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Sombra para mejor visibilidad */
+    z-index: 100; /* Asegúrate de que se muestre por encima de otros elementos */
+}
+
+#songTempoList ul {
+    list-style: none; /* Elimina los estilos por defecto de la lista */
+    padding: 5px; /* Espaciado interno */
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+
+#songTempoList li {
+    padding: 5px; /* Espaciado entre elementos */
+    border-bottom: 1px solid #ddd; /* Línea divisoria entre elementos */
+    font-size: 12px;
+}
+
+#songTempoList li:last-child {
+    border-bottom: none; /* Evita la línea divisoria en el último elemento */
+}
+
+
+#songTempoList li:hover{
+    background-color: #f1f0f0;
+    color: rgb(41, 24, 196);
+    cursor: pointer;
+}

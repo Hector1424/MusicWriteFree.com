@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Canciones</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e6e6e6; /* Reemplaza #f0f0f0 con el color que desees */
+            /* Otras reglas de estilo */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header" class="row">
+        <div class=" col-2 icono-zona">
+            <span>HR-Music</span>
+        </div>
+
+        <div id="accesos-zona" class="col-8">
+            
+        </div>
+
+        <div id="notificaciones-zona" class="col-2">
+            
+        </div>
+    </div>
+    
+    <div id="window" class="row">
+        <!-- <div id="control-panel">
+            <div id="perfil-panel">
+
+            </div>
+        </div> -->
+        <div id="contenido">
+            <div id="editor-ventana" class="row">
+                <div id="play-controls-container" class="col-12">
+                    <div id="tempo-controls" class="col">
+                        <button id="infoButton" title="Referencias de Tempos">i</button>
+                        <div id="songTempoList" style="display: none;">
+                            <ul>
+                                <li data-bpm="120"><b>It's My Life</b> - Bon Jovi: 120 BPM</li>
+                                <li data-bpm="116"><b>Have You Ever Seen the Rain</b> - Creedence Clearwater Revival: 116 BPM</li>
+                                <li data-bpm="168"><b>Las Piedras Rodando</b> - El Tri: 168 BPM</li>
+                                <li data-bpm="122"><b>Luz de Día</b> - Enanitos Verdes: 122 BPM</li>
+                                <li data-bpm="133"><b>Toda La Noche</b> - Barrio Pobre: 133 BPM</li>
+                                <li data-bpm="67"><b>Entra En Mi Vida</b> - Sin Bandera: 67 BPM</li>
+                                <li data-bpm="77"><b>Que Lloro</b> - Sin Bandera: 77 BPM</li>
+                                <li data-bpm="160"><b>La Carencia</b> - Panteón Rococó: 160 BPM</li>
+                                <li data-bpm="150"><b>La Planta</b> - Caos: 150 BPM</li>
+                                <li data-bpm="140"><b>Quién Te Cantará</b> - El Haragán: 140 BPM</li>
+                                <li data-bpm="150"><b>Cuando Tú No Estás</b> - El Tri: 150 BPM</li>
+                                <li data-bpm="71"><b>Gracias Por Estar Conmigo</b> - Conjunto Primavera: 71 BPM (check)</li> 
+                                <li data-bpm="85"><b>Ese Loco Soy Yo</b> - Liberación: 85 BPM</li>
+                                <!-- Más canciones y sus tempos aquí -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="indicators-container" class="col">
+                        <div id="led-metronomo">
+                            o
+                        </div>
+                    </div>
+                    <div class="col">
+
+                    </div>
+                </div>
+                
+                <div class="linea-horizontal"></div>
+                
+                <div id="editor-controls-container" class="col-12">
+                    <!-- Los botones de control se agregarán aquí mediante JavaScript -->
+                
+                </div>
+                <div class="linea-horizontal"></div>
+
+                <div id="editor-container" class="col-12">
+                    <div class="row ventana-impresion">
+                        <div id="titulo-cancion" class="col-12">
+                            <input id="titulo-cancion-text" type="text" placeholder="Titulo">
+                        </div>
+                        <div id="artista-cancion" class="col-12">
+                            <input id="subtitulo-cancion-text" type="text" placeholder="Artista">
+                        </div>
+
+                        <div id="renglones" class="col-12"></div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+
+
+    <div id="contenedorFiltroNotas">
+        <input type="text" id="filtroNotas" placeholder="Filtrar notas...">
+        <select id="selectorNotas" class="selector-notas" size="7">
+            <option value="espacio">Espacio vacío</option>
+            <option value="Do">Do</option>
+            <option value="Re">Re</option>
+            <option value="Mi">Mi</option>
+            <option value="Fa">Fa</option>
+            <option value="Sol">Sol</option>
+            <option value="La">La</option>
+            <option value="Si">Si</option>
+            <option value="Dom">Dom</option>
+            <option value="Rem">Rem</option>
+            <option value="Mim">Mim</option>
+            <option value="Fam">Fam</option>
+            <option value="Solm">Solm</option>
+            <option value="Lam">Lam</option>
+            <option value="Sim">Sim</option>
+            <option value="Do7">Do7</option>
+            <option value="Re7">Re7</option>
+            <option value="Mi7">Mi7</option>
+            <option value="Fa7">Fa7</option>
+            <option value="Sol7">Sol7</option>
+            <option value="La7">La7</option>
+            <option value="Si7">Si7</option>
+            <option value="Dom7">Dom7</option>
+            <option value="Rem7">Rem7</option>
+            <option value="Mim7">Mim7</option>
+            <option value="Fam7">Fam7</option>
+            <option value="Solm7">Solm7</option>
+            <option value="Lam7">Lam7</option>
+            <option value="Sim7">Sim7</option>
+            <option value="Do#">Do#</option>
+            <option value="Re#">Re#</option>
+            <option value="Fa#">Fa#</option>
+            <option value="Sol#">Sol#</option>
+            <option value="La#">La#</option>
+            <option value="Do#m">Do#m</option>
+            <option value="Re#m">Re#m</option>
+            <option value="Fa#m">Fa#m</option>
+            <option value="Sol#m">Sol#m</option>
+            <option value="La#m">La#m</option>
+            <option value="Do#7">Do#7</option>
+            <option value="Re#7">Re#7</option>
+            <option value="Fa#7">Fa#7</option>
+            <option value="Sol#7">Sol#7</option>
+            <option value="La#m7">La#7</option>
+            <option value="Do#m7">Do#m7</option>
+            <option value="Re#m7">Re#m7</option>
+            <option value="Fa#m7">Fa#m7</option>
+            <option value="Sol#m7">Sol#m7</option>
+            <option value="La#m7">La#m7</option>
+        </select>    
+
+    </div>
+
+
+    
+
+
+    <script src="script.js"></script>
+</body>
+</html>
